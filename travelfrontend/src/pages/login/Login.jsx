@@ -3,12 +3,15 @@ import Navbar from '../home/Navbar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Lottie from 'lottie-react'
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
-import { Link } from 'react-router-dom'
+import { Link, redirect } from 'react-router-dom'
 import login from '../../lotte/assests/login.json'
 import arrowani from '../../lotte/assests/arrowani.json'
-
+import { useContext } from 'react'
+import { userLoginContext } from '../../context/userLogoncontext'
 
 const Login = () => {
+
+    const {userstatus,setuserstatus}=useContext(userLoginContext)
 
     const [showpass, setshowpass] = useState(false)
 
@@ -19,6 +22,11 @@ const Login = () => {
     const validateotp = () => {
         console.log("otp")
 
+    }
+
+    const handlelogin=()=>{
+        setuserstatus('Logout')
+        
     }
 
     return (
@@ -63,7 +71,7 @@ const Login = () => {
 
                             <div className="input-div text-center">
                                 <div className="login-btn-div ">
-                                    <button className='bg-green-400 p-2 rounded-md m-3'>
+                                    <button className='bg-green-400 p-2 rounded-md m-3' onClick={handlelogin}>
                                         Login
                                     </button>
                                 </div>

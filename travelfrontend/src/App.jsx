@@ -7,6 +7,7 @@ import HomePage from './pages/home/HomePage'
 import Navbar from './pages/home/Navbar'
 import Login from './pages/login/Login'
 import Signup from './pages/signup/Signup'
+import Dashboard from './pages/dashboard/Dashboard'
 
 function App() {
   
@@ -23,7 +24,7 @@ function App() {
           </Route>
           <Route path='/signup' element={<Signup />}/>
 
-          
+          <Route path='/dashboard' element={<Dashboard />}/>
 
         </Routes>
 

@@ -23,10 +23,6 @@ const menus = [
         path:'/contact-us'
     },
 
-        {
-            nname: 'Login',
-            path: '/login'
-        }
 ]
 
 export default menus

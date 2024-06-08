@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState , useContext} from 'react'
 import { Link } from 'react-router-dom'
 import menus from './navitem'
-
+import { userLoginContext } from '../../context/userLogoncontext'
 
 const Navbar = () => {
 
-
-
+  const {userstatus,setuserstatus}=useContext(userLoginContext)
+const handleLogout=()=>{
+  setuserstatus('Login')
+}
   return (
     <div className=" bg-teal-700 text-teal-50 w-full fixed flex h-14  m-0 p-0" style={{width:'100%', margin:'0', padding:'0'}}> 
 
@@ -36,6 +38,25 @@ const Navbar = () => {
 
             })
           }
+{
+  userstatus==='Login'? <div>
+  <Link to='/login'>
+{
+userstatus
+}
+  </Link>
+</div>:null
+}
+{
+  userstatus==='Logout'? <div>
+  <Link to='/' onClick={handleLogout}>
+{
+userstatus
+}
+  </Link>
+</div>:null
+}
+         
       
 
       </div>
